@@ -8,9 +8,10 @@ defmodule Link1 do
   def run do
     spawn(Link1, :sad_function, [])
     receive do
-      msg -> "MSG RECEIVED: #{inspect msg}"
+      msg ->
+      IO.puts "MSG RECEIVED: #{inspect msg}"
     after 1000 ->
-      10.puts "normal"
+      IO.puts "normal"
   end
 end
 
